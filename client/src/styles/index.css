@@ -12,10 +12,10 @@
 @layer components {
   /* Buttons */
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-black rounded-pill text-sm font-medium transition-all duration-300 hover:bg-black hover:text-white;
+    @apply inline-flex items-center gap-2 px-3 py-2 border border-black rounded-xl text-lg font-semibold transition-all duration-300 hover:bg-black hover:text-white;
   }
   .btn-outline .icon-circle {
-    @apply inline-flex items-center justify-center w-7 h-7 rounded-full bg-black text-white transition-all duration-300;
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-lg bg-black text-white transition-all duration-300;
   }
   .btn-outline:hover .icon-circle {
     @apply bg-white text-black;
@@ -40,7 +40,7 @@
 
   /* Hamburger */
   .hamburger {
-    @apply hidden w-11 h-11 rounded-full bg-pink flex-col items-center justify-center gap-[5px] z-[1001] transition-all duration-300;
+    @apply hidden w-11 h-11 rounded-xl bg-pink flex-col items-center justify-center gap-[5px] z-[1001] transition-all duration-300;
   }
   .hamburger-line {
     @apply block w-[18px] h-0.5 bg-black rounded-sm transition-all duration-300 origin-center;
@@ -51,7 +51,7 @@
     @apply flex-1 max-w-[340px] h-[420px] rounded-card overflow-hidden transition-transform duration-500;
   }
   .expertise-card {
-    @apply sticky rounded-card p-12 min-h-[580px] flex flex-col shadow-[0_-4px_20px_rgba(0,0,0,0.06)];
+    @apply sticky rounded-card p-5 md:p-14 flex flex-col justify-between;
   }
   .work-card {
     @apply flex flex-col rounded-card overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)];
@@ -69,13 +69,21 @@
 /* Ticker animation */
 .brands-track {
   display: flex;
-  gap: 16px;
-  animation: ticker 25s linear infinite;
+  gap: 24px;
+  animation: ticker 30s linear infinite;
   width: max-content;
 }
 @keyframes ticker {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-33.33%); }
+}
+
+/* Logo spawn animation */
+@keyframes logoSpawn {
+  0%   { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(0.6); }
+  15%  { opacity: 1; transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(1); }
+  70%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -60%) rotate(var(--r, 0deg)) scale(0.9); }
 }
 
 /* Spinning badge */
@@ -91,14 +99,30 @@
 
 /* Mobile menu */
 .mobile-menu {
-  position: fixed; inset: 0; z-index: 999;
-  background: #e7a9ff;
-  display: flex; flex-direction: column;
-  opacity: 0; visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-  transform: scale(0.96);
+  position: fixed;
+  top: 1vh;
+  bottom: 1vh;
+  left: 50%;
+  translate: -50% 0;
+  width: 98vw;
+  z-index: 999;
+  background: #e4b3f8;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: top left;
+  transform: translate(-40px, -40px) scale(0.9);
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              visibility 0.4s;
 }
-.mobile-menu.open { opacity: 1; visibility: visible; transform: scale(1); }
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0) scale(1);
+}
 
 /* Hero card rotations */
 .hero-card:nth-child(1) { transform: rotate(-3deg); }
@@ -191,7 +215,22 @@
 .nav-hover-link:hover .nav-hover-text .t-default { transform: translateY(-100%); }
 .nav-hover-link:hover .nav-hover-text .t-hover   { transform: translateY(-100%); }
 
-/* Hamburger active state */
+/* Expertise button icon rotation */
+.expertise-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.expertise-btn:hover .expertise-btn-icon {
+  transform: rotate(-15deg);
+}
+
+/* Hamburger active state — turns white when open */
+.hamburger.open { background-color: #fff; }
 .hamburger.open .hamburger-line:first-child { transform: rotate(45deg) translate(2.5px, 2.5px); }
 .hamburger.open .hamburger-line:last-child  { transform: rotate(-45deg) translate(2.5px, -2.5px); }
 

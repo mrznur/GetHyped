@@ -29,28 +29,28 @@
       "subtitle": "Slimme strategie. Sterke start.",
       "description": "We duiken diep in jouw merk, doelgroep en doelen. En vertalen data naar een duidelijk plan met formats die écht impact maken. Zo weet je precies waarom het werkt.",
       "cta": { "label": "Meer over social strategie", "href": "#" },
-      "image": "/assets/images/expertise-strategy.png", "color": "cream"
+      "image": "/expertise-strategy.png", "color": "cream"
     },
     {
       "number": "02", "title": "Content creation",
       "subtitle": "Content die opvalt en raakt.",
       "description": "We maken content die opvalt. Blijft hangen. En jouw doelgroep raakt. Creatief, snel en energiek. Altijd met het doel voor ogen.",
       "cta": { "label": "Meer over content creatie", "href": "#" },
-      "image": "/assets/images/expertise-content.png", "color": "pink"
+      "image": "/expertise-content.png", "color": "pink"
     },
     {
       "number": "03", "title": "Activation",
       "subtitle": "Zichtbaar waar en wanneer het telt.",
       "description": "De juiste content verdient het om gezien te worden. We verspreiden de content waar jouw doelgroep is. Zo raakt jouw merk de juiste mensen, precies waar en wanneer het telt.",
       "cta": { "label": "Meer over activatie", "href": "#" },
-      "image": "/assets/images/expertise-activation.png", "color": "green"
+      "image": "/expertise-activation.png", "color": "green"
     },
     {
       "number": "04", "title": "Data",
       "subtitle": "Inzichten die impact maken.",
       "description": "We duiken in de cijfers om te snappen wat écht werkt. En sturen jouw content scherp bij.",
       "cta": { "label": "Meer over data", "href": "#" },
-      "image": null, "color": "blue"
+      "image": "/expertise-data.png", "color": "blue"
     }
   ],
   "work": {
@@ -90,7 +90,6 @@
     "address": "Beltrumsestraat 6, 7141 AL Groenlo",
     "addressHref": "https://www.google.nl/maps/dir//Beltrumsestraat+6,+7141+AL+Groenlo",
     "privacy": "Privacyvoorwaarden",
-    "copyright": "© 2025 Get Hyped",
-    "design": { "label": "© Design by Dylan", "href": "https://dylanbrouwer.design/" }
+    "copyright": "© 2025 Get Hyped"
   }
 }
